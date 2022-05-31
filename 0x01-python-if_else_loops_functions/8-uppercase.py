@@ -4,8 +4,10 @@ def uppercase(str):
     for c in str:
         if ord(c) == 32:
             s += c
-        elif 65 < ord(c) < 90:
+        elif 64 < ord(c) < 91:
             s += c
-        else:
+        elif 96 < ord(c) < 123:
             s += chr(ord(c) - 32)
+        else:
+            s += c
     print("{}".format(s))
