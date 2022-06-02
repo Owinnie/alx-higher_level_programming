@@ -8,7 +8,7 @@ if __name__ == "__main__":
     n1 = int(sys.argv[1])
     n2 = int(sys.argv[3])
     op = sys.argv[2]
-    if op != '+' or op != '-' or op != '*' or op != '/':
+    if op != '+' and op != '-' and op != '*' and op != '/':
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
     if op == "+":
