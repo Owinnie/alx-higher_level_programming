@@ -8,9 +8,9 @@
 #include <string.h>
 
 /**
- * print_python_float - print some basic infor about Python
+ * print_python_float - print info about Py
  * float objects
- * @p: pointer to PyObject p
+ * @p: ptr to PyObject p
  */
 void print_python_float(PyObject *p)
 {
@@ -31,7 +31,7 @@ void print_python_float(PyObject *p)
 }
 
 /**
- * print_python_bytes - print some basic info about Python
+ * print_python_bytes - print info about Py
  * byte objects
  * @p: pointer to PyObject p
  */
@@ -64,7 +64,7 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
- * print_python_list - print some basic info about Python lists
+ * print_python_list - print info about Py lists
  * @p: pointer to PyObject p
  */
 void print_python_list(PyObject *p)
