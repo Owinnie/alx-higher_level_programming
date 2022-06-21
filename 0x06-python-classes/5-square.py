@@ -12,25 +12,25 @@ class Square:
         Args:
             size (int): The size of the new square.
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
         """Retrieve size"""
-        return (self.__size)
+        return self.__size
 
     @size.setter
-    def size(self, value):
+    def size(self, size):
         """Set size"""
-        if type(value) != int:
+        if type(size) != int:
             raise TypeError("size must be an integer")
-        elif value < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        self.__size = size
 
     def area(self):
         """Returns the current square area"""
-        return (self.__size * self.__size)
+        return (self.__size ** 2)
 
     def my_print(self):
         """Prints in stdout the square with the character #"""
