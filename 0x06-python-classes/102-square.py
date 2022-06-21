@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defining class Square."""
+"""Define a class Square."""
 
 
 class Square:
@@ -14,7 +14,7 @@ class Square:
 
     @property
     def size(self):
-        """Retrieve the current size of the square."""
+        """Get/set the current size of the square."""
         return (self.__size)
 
     @size.setter
@@ -29,26 +29,26 @@ class Square:
         """Return the current area of the square."""
         return (self.__size * self.__size)
 
-    def __eql__(self, other):
+    def __eq__(self, other):
         """Define the == comparision to a Square."""
         return self.area() == other.area()
 
-    def __negt__(self, other):
+    def __ne__(self, other):
         """Define the != comparison to a Square."""
         return self.area() != other.area()
 
-    def __lst__(self, other):
+    def __lt__(self, other):
         """Define the < comparison to a Square."""
         return self.area() < other.area()
 
-    def __lseq__(self, other):
+    def __le__(self, other):
         """Define the <= comparison to a Square."""
         return self.area() <= other.area()
 
-    def __grt__(self, other):
+    def __gt__(self, other):
         """Define the > comparison to a Square."""
         return self.area() > other.area()
 
-    def __greq__(self, other):
+    def __ge__(self, other):
         """Define the >= compmarison to a Square."""
         return self.area() >= other.area()
