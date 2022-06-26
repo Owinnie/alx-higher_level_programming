@@ -68,7 +68,7 @@ class TestMaxInteger(unittest.TestCase):
         s = [0, "Win", 2, 4, 6]
         with self.assertRaises(TypeError):
             max_integer(s)
-    
+
     def float_test(self):
         """Compare floats"""
         self.assertEqual(max_integer([1.0, 2.0, 1.5]), 2.0)
@@ -76,6 +76,7 @@ class TestMaxInteger(unittest.TestCase):
     def strings_test(self):
         """Use ascii to compare strs"""
         self.assertEqual(max_integer('WINnie'), 'n')
+
 
 if __name__ == "__main__":
     unittest.main()

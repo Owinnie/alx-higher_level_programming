@@ -5,6 +5,8 @@ Module contains one function: add_integer()
 that adds two no. floats and ints and returns
 the outcome
 """
+
+
 def add_integer(a, b=98):
     """Returns addition of two no. of type int
     or float
