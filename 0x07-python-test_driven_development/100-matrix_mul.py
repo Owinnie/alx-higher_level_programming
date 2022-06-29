@@ -13,49 +13,47 @@ def matrix_mul(m_a, m_b):
         m_b (list): matrix 2
     Returns: new matrix--> row=m_a, col=m_b
     """
-    if type(m_a) != list:
+    if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
-    elif type(m_b) != list:
+    elif not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
-    for rw in m_a:
-        if type(rw) != list:
-            raise TypeError("m_a must be a list of lists")
-    for rw2 in m_b:
-        if type(rw2) != list:
-            raise TypeError("m_b must be a list of lists")
-    if m_a == [] or m_a == [[]]:
+    elif not all(isinstance(row, list) for row in m_a):
+        raise TypeError("m_a must be a list of lists")
+    elif not all(isinstance(row, list) for row in m_b):
+        raise TypeError("m_b must be a list of lists")
+    elif m_a == [] or m_a == [[]]:
         raise ValueError("m_a can't be empty")
-    elif m_b == [] or m_b = [[]]:
+    elif m_b == [] or m_b == [[]]:
         raise ValueError("m_b can't be empty")
-    for rw in m_a:
-        for el in rw:
-            if type(el) not in [int, float]:
-                raise TypeError("m_a should contain only integers or floats")
-    for rw2 in m_b:
-        for el2 in rw2:
-            if type(el2) not in [int, float]:
-                raise TypeError("m_b should contain only integers or floats")
-    if not all(len(rw) == len(m_a[0]) for rw in m_a):
+    elif not all((isinstance(ele, int) or isinstance(ele, float))
+                 for ele in [x for row in m_a for x in row]):
+        raise TypeError("m_a should contain only integers or floats")
+    elif not all((isinstance(ele, int) or isinstance(ele, float))
+                 for ele in [x for row in m_b for x in row]):
+        raise TypeError("m_b should contain only integers or floats")
+    if not all(len(row) == len(m_a[0]) for row in m_a):
         raise TypeError("each row of m_a must be of the same size")
-    if not all(len(rw2) == len(m_b[0]) for rw2 in m_b):
+    if not all(len(row) == len(m_b[0]) for row in m_b):
         raise TypeError("each row of m_b must be of the same size")
+
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-    pd_mat = []
-    new_matrix = []
-    for r in range(len(m_b[0])):
-        new_rw = []
-        for c in range(len(m_b)):
-            new_rw.append(m_b[c][r])
-        pd_mat.append(new_rw)
 
-    for rw in m_a:
-        new_rw = []
-        for col in pd_mat:
-            pd = 0
-            for i in range(len(pd_mat[0])):
-                pd += rw[i] * col[i]
-            new_rw.append(pd)
-        new_matrix.append(new_rw)
+    inverted_b = []
+    for row in range(len(m_b[0])):
+        new_row = []
+        for column in range(len(m_b)):
+            new_row.append(m_b[column][row])
+        inverted_b.append(new_row)
+
+    new_matrix = []
+    for row in m_a:
+        new_row = []
+        for col in inverted_b:
+            prod = 0
+            for i in range(len(inverted_b[0])):
+                prod += row[i] * col[i]
+            new_row.append(prod)
+        new_matrix.append(new_row)
 
     return new_matrix
