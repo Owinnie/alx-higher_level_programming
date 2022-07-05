@@ -4,7 +4,7 @@
 to an object if it’s possible"""
 
 
-def add_new_att(obj, att, value):
+def add_attribute(obj, att, value):
     """Add a new attribute of `value`
     to object"""
     if not hasattr(obj, "__dict__"):
