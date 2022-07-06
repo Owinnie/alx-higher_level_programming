@@ -10,4 +10,4 @@ import json
 
 def to_json_string(my_obj):
     """To json str"""
-    return json.dumps(my_object)
+    return json.dumps(my_obj)
