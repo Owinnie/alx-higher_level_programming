@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-
-"""Write a function that reads a
-text file and prints it to stdout"""
+"""reading file"""
 
 
 def read_file(filename=""):
-    """Reading"""
-    with open(filename, encoding='utf-8') as f:
+    """reading file"""
+    with open(filename, encoding="utf-8") as f:
         print(f.read(), end="")
