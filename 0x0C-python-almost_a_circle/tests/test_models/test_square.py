@@ -31,7 +31,3 @@ class TestSquareClass(unittest.TestCase):
         s1 = Square(10, 2, 1)
         s1_dictionary = s1.to_dictionary()
         self.assertEqual(type(s1_dictionary), dict)
-
-
-if __name__ == '__main__':
-    unittest.main()
