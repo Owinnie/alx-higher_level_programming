@@ -1,10 +1,11 @@
-import json
-
 """unit testing with the
 unittest module"""
 
+
+import json
 import unittest
 from models.base import Base
+
 
 class TestBaseClass(unittest.TestCase):
     """testing the base class"""
@@ -35,7 +36,7 @@ class TestBaseClass(unittest.TestCase):
     def test_from_json_string(self):
         """testing from_json_string ()"""
         x = '[1, 2, "b"]'
-        if x not in [str, bytes, bytearray]:
+        if type(x) in [str, bytes, bytearray]:
             self.assertAlmostEqual(Base.from_json_string(None), [])
             self.assertAlmostEqual(Base.from_json_string(x), [1, 2, "b"])
         else:
