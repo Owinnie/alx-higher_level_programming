@@ -42,8 +42,3 @@ class TestBaseClass(unittest.TestCase):
             self.assertAlmostEqual(Base.from_json_string(x), [1, 2, "b"])
         else:
             self.assertRaises(TypeError, Base.from_json_string, x)
-
-
-
-if __name__ == '__main__':
-    unittest.main()
