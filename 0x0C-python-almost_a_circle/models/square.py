@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """12.
 Update the class Square by adding
 the public method def update
