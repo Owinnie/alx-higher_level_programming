@@ -4,7 +4,7 @@ import json
 unittest module"""
 
 import unittest
-from PythonAlmostAcircle import Base, Rectangle
+from models.base import Base
 
 class TestBaseClass(unittest.TestCase):
     """testing the base class"""
