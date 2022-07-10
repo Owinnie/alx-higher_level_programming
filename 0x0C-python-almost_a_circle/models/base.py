@@ -2,6 +2,8 @@
 """1.
 write the first class Base"""
 
+import json
+
 
 class Base:
     """I AM The Base"""

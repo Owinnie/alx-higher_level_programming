@@ -4,8 +4,8 @@
 Square ()"""
 
 
-import json
 import unittest
+import json
 from models.square import Square
 
 

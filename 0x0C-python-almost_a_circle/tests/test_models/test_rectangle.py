@@ -4,9 +4,11 @@
 Rectangle ()"""
 
 
-import json
 import unittest
-from models.rectangle import Rectangle
+import json
+from models import rectangle
+from models.base import Base
+Rectangle = rectangle.Rectangle
 
 
 class TestRectangleClass(unittest.TestCase):

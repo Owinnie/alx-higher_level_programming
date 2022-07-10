@@ -5,6 +5,11 @@ the public method def update
 (self, *args, **kwargs) that
 assigns attributes"""
 
+import json
+from models import rectangle
+from models.base import Base
+Rectangle = rectangle.Rectangle
+
 
 class Square(Rectangle):
     """I'm a descendant of Rectangle"""
@@ -30,8 +35,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """informal str representation"""
-        return ("[Square] ({}) {}/{} - {}"\n
-                .format(self.id, self.x, self.y, \n
+        return ("[Square] ({}) {}/{} - {}"
+                .format(self.id, self.x, self.y,
                         self.width))
 
     def update(self, *args, **kwargs):
@@ -58,6 +63,6 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Dict representation"""
-        ls = [("id", self.id), ("size", self.size), \n
+        ls = [("id", self.id), ("size", self.size),
               ("x", self.x), ("y", self.y)]
         return dict(ls)

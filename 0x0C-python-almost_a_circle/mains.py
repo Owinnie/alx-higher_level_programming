@@ -17,10 +17,8 @@ print(b5.id)
 
 # end of test and task 1
 
-
 """main-
 testing class Rectangle"""
-
 r1 = Rectangle(10, 2)
 print(r1.id)
 
@@ -32,11 +30,8 @@ print(r3.id)
 
 # end of test and task 2
 
-
-
 """main -
 testing updated class Rectangle"""
-
 try:
     Rectangle(10, "2")
 except Exception as e:
@@ -64,7 +59,6 @@ except Exception as e:
 """main -
 testing area() of
 instance Rectangle"""
-
 r1 = Rectangle(3, 2)
 print(r1.area())
 
@@ -76,12 +70,9 @@ print(r3.area())
 
 # end of testing and task 4
 
-
-
 """main -
 testing display() of
 instance Rectangle"""
-
 r1 = Rectangle(4, 6)
 r1.display()
 
@@ -95,7 +86,6 @@ r1.display()
 """main -
 testing __str__ of
 class Rectangle"""
-
 r1 = Rectangle(4, 6, 2, 1, 12)
 print(r1)
 
@@ -104,11 +94,8 @@ print(r2)
 
 # end of testing and task 6
 
-
-
 """main -
 testing updated display()"""
-
 r1 = Rectangle(2, 3, 2, 2)
 r1.display()
 
@@ -119,11 +106,9 @@ r2.display()
 
 # end of testing and task 7
 
-
 """main -
 testing new function:
 update()"""
-
 r1 = Rectangle(10, 10, 10, 10)
 print(r1)
 
@@ -144,10 +129,8 @@ print(r1)
 
 # end of test and task 8
 
-
 """main -
 testing **kwargs"""
-
 r1 = Rectangle(10, 10, 10, 10)
 print(r1)
 
@@ -222,7 +205,6 @@ except Exception as e:
 
 # end of test and task 11
 
-
 """main -
 testing *args and **kwargs"""
 
@@ -251,7 +233,6 @@ s1.update(size=7, id=89, y=1)
 print(s1)
 
 # end of test and task 12
-
 
 """main -
 testing Square's to_dictionary()"""
@@ -309,7 +290,6 @@ print("[{}] {}".format(type(json_list_input), json_list_input))
 print("[{}] {}".format(type(list_output), list_output))
 
 # end of test 17
-
 
 """main -
 testing create()"""
@@ -404,11 +384,12 @@ for square in list_squares_output:
 
 # end of test 20
 
-
 """ main -
 testing turtle graphics"""
 
-list_rectangles = [Rectangle(100, 40), Rectangle(90, 110, 30, 10), Rectangle(20, 25, 110, 80)]
+list_rectangles = [Rectangle(100, 40),
+                   Rectangle(90, 110, 30, 10),
+                   Rectangle(20, 25, 110, 80)]
 list_squares = [Square(35), Square(15, 70, 50), Square(80, 30, 70)]
 
 Base.draw(list_rectangles, list_squares)
