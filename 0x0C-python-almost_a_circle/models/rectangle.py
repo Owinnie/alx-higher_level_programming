@@ -5,6 +5,7 @@ the public method def to_dictionary(self):
 that returns the dictionary
 representation of a Rectangle"""
 
+
 class Rectangle(Base):
     """I'm a descendant of Base"""
 
@@ -78,14 +79,14 @@ class Rectangle(Base):
 
     def display(self):
         """print Rectangle with #"""
-        print("\n"*self.__y + "\n"\
-              .join(" " * self.__x + "#" * self.__width\
+        print("\n" * self.__y + "\n"\n
+              .join(" " * self.__x + "#" * self.__width\n
                     for _ in range(self.__height)))
 
     def __str__(self):
         """informal str representation"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}"\
-                .format(self.id, self.__x, self.__y,\
+        return ("[Rectangle] ({}) {}/{} - {}/{}"\n
+                .format(self.id, self.__x, self.__y, \n
                         self.__width, self.__height))
 
     def update(self, *args, **kwargs):
@@ -115,7 +116,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Dictionary representation"""
-        ls = [("x", self.__x), ("y", self.__y),\
-              ("id", self.id), ("height", self.__height),\
+        ls = [("x", self.__x), ("y", self.__y), \n
+              ("id", self.id), ("height", self.__height), \n
               ("width", self.__width)]
         return dict(ls)

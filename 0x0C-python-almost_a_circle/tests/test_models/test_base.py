@@ -29,11 +29,12 @@ class TestBaseClass(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         self.assertAlmostEqual(Base.save_to_file(None), [].append([]))
-        self.assertAlmostEqual(Rectangle.save_to_file([r1, r2]),\
-                               [{"y": 8, "x": 2, "id": 1,\
-                                 "width": 10, "height": 7},\
-                                {"y": 0, "x": 0, "id": 2,\
+        self.assertAlmostEqual(Rectangle.save_to_file([r1, r2]), \n
+                               [{"y": 8, "x": 2, "id": 1, \n
+                                 "width": 10, "height": 7}, \n
+                                {"y": 0, "x": 0, "id": 2, \n
                                  "width": 2, "height": 4}].append([]))
+
     def test_from_json_string(self):
         """testing from_json_string ()"""
         x = '[1, 2, "b"]'

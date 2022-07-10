@@ -5,6 +5,7 @@ the public method def update
 (self, *args, **kwargs) that
 assigns attributes"""
 
+
 class Square(Rectangle):
     """I'm a descendant of Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
@@ -29,8 +30,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """informal str representation"""
-        return ("[Square] ({}) {}/{} - {}"\
-                .format(self.id, self.x, self.y,\
+        return ("[Square] ({}) {}/{} - {}"\n
+                .format(self.id, self.x, self.y, \n
                         self.width))
 
     def update(self, *args, **kwargs):
@@ -57,6 +58,6 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Dict representation"""
-        ls = [("id", self.id), ("size", self.size),\
+        ls = [("id", self.id), ("size", self.size), \n
               ("x", self.x), ("y", self.y)]
         return dict(ls)

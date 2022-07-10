@@ -2,6 +2,7 @@
 """1.
 write the first class Base"""
 
+
 class Base:
     """I AM The Base"""
     __nb_objects = 0
@@ -25,11 +26,11 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """json str object to a file"""
-        filename = cls.__name__+ ".json"
+        filename = cls.__name__ + ".json"
         ls = []
         if list_objs:
-                for ele in list_objs:
-                    ls.append(cls.to_dictionary(ele))
+            for ele in list_objs:
+                ls.append(cls.to_dictionary(ele))
         with open(filename, "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(ls))
 
@@ -78,12 +79,11 @@ class Base:
                 for obj in list_objs:
                     csv_writer.writerow([obj.id, obj.size, obj.x, obj.y])
 
-
     @classmethod
     def load_from_file_csv(cls):
         """Deserialize"""
         filename = cls.__name__ + ".csv"
-        l = []
+        ls = []
         try:
             with open(filename, 'r') as csvfile:
                 csv_reader = csv.reader(csvfile)
@@ -98,11 +98,10 @@ class Base:
                         dictionary = {"id": int(args[0]), "size": int(args[1]),
                                       "x": int(args[2]), "y": int(args[3])}
                     obj = cls.create(**dictionary)
-                    l.append(obj)
-        except:
+                    ls.append(obj)
+        except Exception:
             pass
-        return l
-
+        return ls
 
     @staticmethod
     def draw(list_rectangles, list_squares):
