@@ -1,5 +1,3 @@
 #!/bin/bash
-# Write a Bash script that takes in a URL,
-# sends a GET request to the URL,
-# and displays the body of the response
+# takes URL,sends GET request to URL,displays body of response
 curl -sfL "$1" -X GET
