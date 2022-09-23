@@ -4,6 +4,7 @@
 
 def find_peak(list_of_integers):
     """I find the peak"""
+    A = list_of_integers[:]
     if A == []:
         return None
     def recursive(A, left=0, right=len(A) - 1):
