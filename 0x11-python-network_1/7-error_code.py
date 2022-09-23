@@ -12,4 +12,4 @@ if __name__ == "__main__":
         body.raise_for_status()
         print(body.text)
     except Exception:
-        print("Error code {}".format(body.status_code))
+        print("Error code: {}".format(body.status_code))
